@@ -25,22 +25,24 @@ jobs:
               "enforcement": "active",
               "conditions": {
                 "ref_name": {
-                  "include": ["main"],
+                  "include": ["refs/heads/main"],
                   "exclude": []
                 }
               },
               "rules": [
                 {
-                  "type": "required_pull_request_review",
+                  "type": "pull_request",
                   "parameters": {
-                    "require_approving_review_count": 1,
-                    "require_last_push_approval": false,
+                    "required_approving_review_count": 1,
                     "dismiss_stale_reviews_on_push": false,
-                    "require_code_owner_review": false
+                    "require_code_owner_review": false,
+                    "require_last_push_approval": false,
+                    "required_review_thread_resolution": false,
+                    "automatic_copilot_code_review_enabled": false
                   }
                 },
                 {
-                  "type": "linear_history",
+                  "type": "non_fast_forward",
                   "parameters": {}
                 }
               ]
