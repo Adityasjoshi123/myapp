@@ -31,11 +31,12 @@ jobs:
               },
               "rules": [
                 {
-                  "type": "pull_request",
+                  "type": "required_pull_request_review",
                   "parameters": {
                     "require_approving_review_count": 1,
-                    "require_code_owner_review": false,
-                    "dismiss_stale_reviews_on_push": false
+                    "require_last_push_approval": false,
+                    "dismiss_stale_reviews_on_push": false,
+                    "require_code_owner_review": false
                   }
                 },
                 {
